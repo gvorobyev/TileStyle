@@ -1,0 +1,26 @@
+
+<script type="text/javascript">
+if (document.images) {
+ image_on = new Image();
+ image_on.src = "tiger_a.jpg";
+ image_on.width = "500";
+ image_off = new Image();
+ image_off.src = "tiger.jpg";
+ image_off.width = "500";
+}
+function change_img() {
+ if (document.images) {
+  for (var i=0; i<change_img.arguments.length; i+=2) {
+  document[change_img.arguments[i]].src = eval(change_img.arguments[i+1]+".src");
+  document[change_img.arguments[i]].width = eval(change_img.arguments[i+1]+".width");
+  }
+ }
+}
+</script>
+
+<span onmouseout="change_img('image', 'image_off')"
+onmouseover="change_img('image', 'image_on')">
+<a href="http://usefulscript.ru/tiger.php">
+ <img src="tiger.jpg" width="500" name="image"
+ alt="Изображение, меняющееся при наведении курсора"></a>
+</span>
